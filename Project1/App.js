@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import logo from "./Logo.png";
+import logo from "url:./Logo.png";
+import './index.css';
+
 
 
 /* My Food App structure will look like this, 
@@ -37,10 +39,45 @@ const Header = () => {
             </div>
     );
 }
+const RestaurantCard = () => {
+    return (
+        <div className="restaurant-card" >
+          <img className="res-logo" src="https://imgs.search.brave.com/AF4S4p7PrJ1LWVZx46iBe8nN1aQJjBJXGbsTzRPskDQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9saDMu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tLzZr/OVFnWVBDRlIteUFF/S1V1NzlDT05PMm9E/T2FSSFBKVXNndzhO/OGIzdHhWdkhjSzBq/cW1McXRwT3BEQXN3/MGVZOTJ1aWp6NUNp/R3dDWnIxM25tSDZB/YWpLemtTSXB2N0dm/RmxqQW9aPXczNjAt/cnc" alt="logo" />
+            <h3>Walia Hotel</h3>
+            <h4>Biryani,North Indian</h4>
+            <h4>4.2 Stars</h4>
+            <h4>30 mins</h4>
+        </div>
+    );
+}
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">Search</div>
+            <div className="restaurant-list">
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                </div>
+            </div>
+    );
+}
 const AppLayout = () => {
     return (
         <div className="app">
             <Header />
+            <Body />
             </div>
     );
 }
