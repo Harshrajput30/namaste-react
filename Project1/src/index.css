@@ -60,6 +60,12 @@ html, body {
   padding: 20px;
 }
 
+.filter-btn {
+  margin: 10px;
+  pointer: cursor;
+  padding: 10px 20px;
+}
+
 /* ================= RESTAURANT LIST (FLEX) ================= */
 
 .restaurant-list {
