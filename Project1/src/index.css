@@ -1,0 +1,130 @@
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* 🔥 NO horizontal scroll */
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 100vw;
+
+  padding: 10px 20px;
+  border-bottom: 1px solid black;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.nav-items ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+
+  padding: 0;
+  margin: 0;
+
+  white-space: nowrap; /* 🔥 keep items in one row */
+}
+
+.nav-items ul li {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* ================= BODY ================= */
+
+.search {
+  padding: 20px;
+}
+
+/* ================= RESTAURANT LIST (FLEX) ================= */
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  padding: 20px 100px;        /* 👈 left & right space */
+  justify-content: flex-start;   /* 👈 centers cards horizontally */
+
+  max-width: 100%;
+  margin: 100px auto;            /* 👈 keeps layout centered */
+}
+
+
+/* ================= CARD ================= */
+
+.restaurant-card {
+  width: 300px;     /* ✅ fixed width */
+  height: 350px;    /* ✅ fixed height */
+
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 30px;
+ 
+
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+/* ================= IMAGE ================= */
+
+.res-logo {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* ================= TEXT ================= */
+
+.restaurant-card h2 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.restaurant-card h4 {
+  font-size: 13px;
+  margin-bottom: 3px;
+  color: #555;
+}
+
+/* ================= FOOTER ================= */
+
+.card-footer {
+  margin-top: 50px; /* 🔥 keeps footer at bottom */
+}
