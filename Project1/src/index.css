@@ -56,10 +56,6 @@ html, body {
 
 /* ================= BODY ================= */
 
-.search {
-  padding: 20px;
-}
-
 .filter-btn {
   margin: 10px;
   pointer: cursor;
@@ -90,7 +86,7 @@ html, body {
   background-color: #f0f0f0;
   border-radius: 10px;
   padding: 10px;
-  margin-top: 30px;
+  
  
 
   display: flex;
@@ -133,4 +129,33 @@ html, body {
 
 .card-footer {
   margin-top: 50px; /* 🔥 keeps footer at bottom */
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+.shimmer-card{
+  width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 400% 100%;
+  margin: 80px 30px;
+}
+
+.login{
+  height: 30px;
+  width: 70px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.login:hover {
+  box-shadow: 1px 1px 5px grey;
+  background-color: #0056b3;
 }

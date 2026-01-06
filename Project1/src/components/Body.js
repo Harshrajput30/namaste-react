@@ -1,11 +1,33 @@
 import RestaurantCard from './RestaurantCard';
 import FOOD_IMAGES from '../constants/foodimages';
 import restaurantList from '../constants/mockdata'; 
-import { useState } from 'react'; 
+import { useState, useEffect } from 'react'; 
+import Shimmer from './Simmer';
 
 
 const Body = () => {
-    const[listofRestro, setlistofRestro]= useState(restaurantList);
+
+    const[listofRestro, setlistofRestro]= useState([]);
+
+
+
+   useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    // Simulating API
+    setTimeout(() => {
+      setlistofRestro(restaurantList);
+    }, 1000);
+  };
+  // Conditional Rendering
+  if(listofRestro.length === 0){
+    return <Shimmer />;
+  }
+
+
+
   return (
     <>
     <div className='filter'>
