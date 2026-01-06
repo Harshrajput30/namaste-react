@@ -8,9 +8,8 @@ import Shimmer from './Simmer';
 const Body = () => {
 
     const[listofRestro, setlistofRestro]= useState([]);
-
-
-
+    const[filteredRestro, setFilteredRestro]= useState([]);
+    const[searchText, setSearchText] = useState("");
    useEffect(() => {
     fetchData();
   }, []);
@@ -19,6 +18,7 @@ const Body = () => {
     // Simulating API
     setTimeout(() => {
       setlistofRestro(restaurantList);
+      setFilteredRestro(restaurantList);
     }, 1000);
   };
   // Conditional Rendering
@@ -31,14 +31,32 @@ const Body = () => {
   return (
     <>
     <div className='filter'>
+      <div className='search'>
+        <input type="text" className='search-box' placeholder='Search...' value={searchText} 
+        onChange={(e) => setSearchText(e.target.value)} />
+
+        <button className='search-btn' onClick={() => {
+            const filteredRestaurants = listofRestro.filter(restaurant => 
+                restaurant.data.name.toLowerCase().includes(searchText.toLowerCase()));
+            setFilteredRestro(filteredRestaurants);
+        }}>
+            Search
+        </button>
+        </div>
+
+
+
         <button className='filter-btn' onClick={() => {
              const filteredRestaurants = listofRestro.filter(restaurant => restaurant.data.avgRating > 4);
-             setlistofRestro(filteredRestaurants);
+             setFilteredRestro(filteredRestaurants);
         }}>
             Top Rated Restaurants</button>
         </div>
+
+
+
     <div className="restaurant-list">
-      {listofRestro.map((restaurant,index) => {
+      {filteredRestro.map((restaurant,index) => {
         return (
           <RestaurantCard
             key={restaurant.data.id}
@@ -47,7 +65,8 @@ const Body = () => {
         );
       })}
 
-    </div></>
+    </div>
+    </>
   );
 };
 
