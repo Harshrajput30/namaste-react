@@ -1,3 +1,4 @@
+
 import RestaurantCard from './RestaurantCard';
 import FOOD_IMAGES from '../constants/foodimages';
 import restaurantList from '../constants/mockdata'; 
@@ -10,9 +11,9 @@ const Body = () => {
     const[listofRestro, setlistofRestro]= useState([]);
     const[filteredRestro, setFilteredRestro]= useState([]);
     const[searchText, setSearchText] = useState("");
-   useEffect(() => {
-    fetchData();
-  }, []);
+     useEffect(() => {
+     fetchData();
+     }, []);
 
   const fetchData = () => {
     // Simulating API
